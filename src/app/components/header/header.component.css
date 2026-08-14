@@ -1,0 +1,73 @@
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(90deg, #1e293b, #334155);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.store-name {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.header-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  min-width: 200px;
+}
+
+.search-box {
+  width: 100%;
+  max-width: 420px;
+  padding: 0.55rem 1rem;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.cart-button {
+  position: relative;
+  background: #f59e0b;
+  color: #1e293b;
+  border: none;
+  padding: 0.55rem 1.1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.2s ease;
+  white-space: nowrap;
+}
+
+.cart-button:hover {
+  background: #d97706;
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #ef4444;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+}

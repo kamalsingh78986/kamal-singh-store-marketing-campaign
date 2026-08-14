@@ -1,0 +1,28 @@
+<div class="overlay" (click)="onClose()">
+  <div class="cart-panel" (click)="$event.stopPropagation()">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="close-btn" (click)="onClose()">✕</button>
+    </div>
+
+    <div class="cart-body" *ngIf="cartService.cartItems().length > 0; else emptyCart">
+      <div class="cart-item" *ngFor="let item of cartService.cartItems()">
+        <img [src]="item.product.imageUrl" [alt]="item.product.name" class="cart-item-img" />
+        <div class="cart-item-info">
+          <span class="cart-item-name">{{ item.product.name }}</span>
+          <span class="cart-item-meta">Qty: {{ item.quantity }} × ${{ item.product.price.toFixed(2) }}</span>
+        </div>
+        <button class="remove-btn" (click)="removeItem(item.product.id)">Remove</button>
+      </div>
+    </div>
+
+    <ng-template #emptyCart>
+      <div class="empty-cart">Your cart is empty.</div>
+    </ng-template>
+
+    <div class="cart-footer" *ngIf="cartService.cartItems().length > 0">
+      <span class="total-label">Total</span>
+      <span class="total-price">${{ cartService.getTotalPrice().toFixed(2) }}</span>
+    </div>
+  </div>
+</div>

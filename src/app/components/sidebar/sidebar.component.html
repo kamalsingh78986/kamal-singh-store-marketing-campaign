@@ -1,0 +1,18 @@
+<nav class="sidebar">
+  <h3 class="sidebar-title">Categories</h3>
+  <ul class="category-list">
+    <li
+      class="category-item"
+      [class.active]="selectedCategory === 'All'"
+      (click)="selectCategory('All')">
+      All Products
+    </li>
+    <li
+      class="category-item"
+      *ngFor="let category of categories"
+      [class.active]="selectedCategory === category"
+      (click)="selectCategory(category)">
+      {{ category }}
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,35 @@
+.product-grid-section {
+  flex: 1;
+  padding: 1.5rem;
+}
+
+.grid-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.grid-header h2 {
+  margin: 0;
+  color: #1e293b;
+}
+
+.result-count {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.empty-state {
+  padding: 3rem;
+  text-align: center;
+  color: #64748b;
+  background: #f8fafc;
+  border-radius: 12px;
+}

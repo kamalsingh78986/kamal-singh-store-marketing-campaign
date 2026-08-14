@@ -1,0 +1,23 @@
+.app-body {
+  display: flex;
+  align-items: flex-start;
+  min-height: calc(100vh - 64px);
+}
+
+.grid-area {
+  flex: 1;
+  min-width: 0;
+}
+
+.loading-state {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .app-body {
+    flex-direction: column;
+  }
+}

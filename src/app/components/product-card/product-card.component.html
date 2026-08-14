@@ -1,0 +1,21 @@
+<div class="product-card">
+  <div class="image-wrapper">
+    <img [src]="product.imageUrl" [alt]="product.name" class="product-image" />
+    <span class="stock-badge" [class.in-stock]="product.inStock" [class.out-stock]="!product.inStock">
+      {{ product.inStock ? 'In Stock' : 'Out of Stock' }}
+    </span>
+  </div>
+  <div class="product-info">
+    <h4 class="product-name">{{ product.name }}</h4>
+    <p class="product-description">{{ product.description }}</p>
+    <div class="product-footer">
+      <span class="product-price">${{ product.price.toFixed(2) }}</span>
+      <button
+        class="add-btn"
+        [disabled]="!product.inStock"
+        (click)="addToCart()">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+</div>

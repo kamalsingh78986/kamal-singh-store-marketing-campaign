@@ -1,0 +1,14 @@
+<section class="product-grid-section">
+  <div class="grid-header">
+    <h2>{{ title }}</h2>
+    <span class="result-count">{{ products.length }} product{{ products.length !== 1 ? 's' : '' }}</span>
+  </div>
+
+  <div class="product-grid" *ngIf="products.length > 0">
+    <app-product-card *ngFor="let product of products" [product]="product"></app-product-card>
+  </div>
+
+  <div class="empty-state" *ngIf="products.length === 0">
+    <p>No products found. Try a different search term or category.</p>
+  </div>
+</section>

@@ -1,0 +1,24 @@
+<header class="app-header">
+  <div class="header-left">
+    <h1 class="store-name">{{ storeName }}</h1>
+  </div>
+
+  <div class="header-center">
+    <input
+      type="text"
+      class="search-box"
+      placeholder="Search products..."
+      [(ngModel)]="searchTerm"
+      (ngModelChange)="onSearchInput()"
+    />
+  </div>
+
+  <div class="header-right">
+    <button class="cart-button" (click)="onCartClick()">
+      🛒 Cart
+      <span class="cart-count" *ngIf="cartService.getTotalItems() > 0">
+        {{ cartService.getTotalItems() }}
+      </span>
+    </button>
+  </div>
+</header>

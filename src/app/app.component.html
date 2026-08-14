@@ -1,0 +1,26 @@
+<app-header
+  [storeName]="storeName"
+  (searchChange)="onSearchChange($event)"
+  (cartClick)="onCartToggle()">
+</app-header>
+
+<div class="app-body">
+  <app-sidebar
+    [categories]="categories"
+    [selectedCategory]="selectedCategory"
+    (categorySelected)="onCategorySelected($event)">
+  </app-sidebar>
+
+  <div class="grid-area">
+    <div *ngIf="isLoading" class="loading-state" role="status" aria-live="polite">
+      Loading products&hellip;
+    </div>
+    <app-product-grid
+      *ngIf="!isLoading"
+      [products]="displayedProducts"
+      [title]="gridTitle">
+    </app-product-grid>
+  </div>
+</div>
+
+<app-cart-modal *ngIf="isCartOpen" (close)="onCartToggle()"></app-cart-modal>
